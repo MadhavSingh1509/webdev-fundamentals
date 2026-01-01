@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First CSS Page</title>
+
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial;
+    }
+
+    h1 {
+      color: blue;
+      text-align: center;
+    }
+
+    p {
+      color: black;
+      font-size: 16px;
+    }
+
+    .box {
+      background-color: white;
+      padding: 15px;
+      margin: 15px;
+      border: 1px solid black;
+    }
+
+    #special {
+      color: green;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: red;
+      color: white;
+      padding: 8px;
+      border: none;
+    }
+
+    button:hover {
+      background-color: darkred;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .item {
+      background-color: lightblue;
+      padding: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Learning CSS</h1>
+
+  <div class="box">
+    <p>This is a paragraph styled using CSS.</p>
+    <p id="special">This line uses an id selector.</p>
+    <button>Click me</button>
+  </div>
+
+  <div class="row">
+    <div class="item">Box 1</div>
+    <div class="item">Box 2</div>
+    <div class="item">Box 3</div>
+  </div>
+
+</body>
+</html>

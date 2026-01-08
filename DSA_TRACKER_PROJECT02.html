@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sheet Tracker</title>
+<style>
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #111827;
+    --header-bg: #1e40af;
+    --header-text: #ffffff;
+    --section-bg: #e0f2fe;
+    --section-border: #1e40af;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 20px 10px;
+    position: relative; /* for positioning the button */
+}
+
+#themeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #fcd34d;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+section {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: var(--section-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--section-border);
+}
+
+h2 {
+    color: var(--section-border);
+    margin-bottom: 10px;
+}
+
+.question label {
+    display: block;
+    margin: 8px 0; /* vertical spacing */
+}
+
+button {
+    background-color: var(--section-border);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+#percentage {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.dark-theme {
+    --bg-color: #1f2937;
+    --text-color: #f9fafb;
+    --header-bg: #111827;
+    --header-text: #f9fafb;
+    --section-bg: #374151;
+    --section-border: #fbbf24;
+}
+
+a {
+    color: var(--section-border);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Sheet Tracker</h1>
+    <p id="quote">"The only way to do great work is to love what you do." – Steve Jobs</p>
+    <p>Track your DSA preparation progress efficiently</p>
+    <button id="themeToggle">Switch Theme</button>
+</header>
+
+<section>
+    <h2>Two Pointers</h2>
+    <div class="question">
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">Container With Most Water</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/3sum/" target="_blank">3Sum</a></label>
+    </div>
+</section>
+
+<section>
+    <h2>Graphs</h2>
+    <div class="question">
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/number-of-islands/" target="_blank">Number of Islands</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/course-schedule/" target="_blank">Course Schedule</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/clone-graph/" target="_blank">Clone Graph</a></label>
+    </div>
+</section>
+
+<section>
+    <h2>Dynamic Programming (DP)</h2>
+    <div class="question">
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/coin-change/" target="_blank">Coin Change</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank">Longest Increasing Subsequence</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/unique-paths/" target="_blank">Unique Paths</a></label>
+    </div>
+</section>
+
+<section>
+    <h2>Greedy</h2>
+    <div class="question">
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/assign-cookies/" target="_blank">Assign Cookies</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/jump-game/" target="_blank">Jump Game</a></label>
+        <label><input type="checkbox" class="task"> <a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank">Meeting Rooms II</a></label>
+    </div>
+</section>
+
+<div id="percentage">Progress: 0%</div>
+
+<footer>
+    Personal project by Aditya Madhav, B.Tech prefinal year student, NIT Patna
+</footer>
+
+<script>
+const checkboxes = document.querySelectorAll('.task');
+const percentageEl = document.getElementById('percentage');
+
+function updatePercentage() {
+    let total = checkboxes.length;
+    let done = 0;
+    checkboxes.forEach(cb => { if(cb.checked) done++; });
+    let percent = Math.round((done/total)*100);
+    percentageEl.textContent = `Progress: ${percent}%`;
+}
+
+checkboxes.forEach(cb => cb.addEventListener('change', updatePercentage));
+
+// Theme toggle
+const themeBtn = document.getElementById('themeToggle');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+});
+</script>
+
+</body>
+</html>

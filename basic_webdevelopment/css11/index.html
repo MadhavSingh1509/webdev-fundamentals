@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Position Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>CSS Position Examples</h2>
+
+    <div class="box static">Static (default)</div>
+
+    <div class="box relative">
+        Relative (top: 20px; left: 20px)
+    </div>
+
+    <div class="parent">
+        Parent (position: relative)
+        <div class="box absolute">
+            Absolute (bottom: 10px; right: 10px)
+        </div>
+    </div>
+
+    <div class="box fixed">
+        Fixed (bottom: 20px; right: 20px)
+    </div>
+
+    <div class="box sticky">
+        Sticky (top: 0)
+    </div>
+
+    <p class="filler">
+        Scroll down to see sticky & fixed in action<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+        Repeat this text to create scroll...<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+
+</body>
+</html>
